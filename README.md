@@ -1,16 +1,25 @@
-# React + Vite
+# Course Catalog Mini App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, highly responsive React web application that allows users to seamlessly browse, search, filter, and sort an interactive directory of professional courses. Built completely from scratch using React, React Router v6, Lucide Icons, and Component-Based Vanilla CSS.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dynamic Search & Filtering:** Live, real-time filtering of courses by title matching and specific category classification.
+- **Advanced Numerical Sorting:** Custom utility algorithm that parses duration strings under the hood to accurately sort items mathematically by course length (Shortest/Longest).
+- **Simulated Network Loading State:** Interactive loading states powered by clean CSS keyframe loaders for a modern UX feel.
+- **Graceful Empty States:** Intuitive feedback UI when search parameters yield no results, including an instant filter-reset mechanism.
+- **Dynamic Structural Routing:** Fully isolated page paths (`/course/:id`) to display deep-dive breakdowns of individual course objectives.
+- **Fluid Responsive Architecture:** Crafted entirely using pure CSS Flexbox and Grid layouts ensuring absolute UI integrity across all device display sizes.
 
-## React Compiler
+## 🛠️ Tech Stack & Architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Core Framework:** React 18 (Vite-powered for optimized bundling speeds)
+- **Routing:** React Router DOM v6
+- **Iconography:** Lucide React
+- **Styling Architecture:** Modular Component-Based CSS (Vanilla CSS design tokens utilized for color variables, padding configurations, and shadow definitions)
 
-## Expanding the Oxlint configuration
+## 📦 Local Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+1. Clone the repository to your machine:
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/course-catalog-app.git](https://github.com/YOUR_USERNAME/course-catalog-app.git)
