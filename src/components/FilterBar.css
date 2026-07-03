@@ -1,0 +1,32 @@
+.filter-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Makes it stack cleanly on mobile phones */
+}
+
+.filter-input {
+  flex: 2;
+  min-width: 250px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  outline: none;
+}
+
+.filter-select {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-card);
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-input:focus, .filter-select:focus {
+  border-color: var(--brand-primary);
+}

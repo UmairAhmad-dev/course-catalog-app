@@ -1,0 +1,136 @@
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.back-link:hover {
+  color: var(--brand-primary);
+}
+
+.detail-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-badge {
+  display: inline-block;
+  background-color: #f0fdf4;
+  color: var(--accent-green);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.detail-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* Specs Row Configuration Layout */
+.detail-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spec-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spec-icon {
+  color: var(--brand-primary);
+}
+
+.spec-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.spec-value {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* Description Section styling */
+.detail-body h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.detail-body p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.syllabus-heading {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.benefits-list {
+  list-style: none;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.check-icon {
+  color: var(--accent-green);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* Error fallback styling standard */
+.error-detail-container {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.back-home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--brand-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  margin-top: 1.5rem;
+}
+
+/* Mobile Friendly Optimization overrides */
+@media (max-width: 640px) {
+  .detail-card {
+    padding: 1.5rem;
+  }
+  .detail-title {
+    font-size: 1.75rem;
+  }
+}
