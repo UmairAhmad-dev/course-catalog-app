@@ -1,0 +1,8 @@
+[
+  {"id":1,"title":"Intro to Web Development","category":"Web","level":"Beginner","duration":"6 weeks"},
+  {"id":2,"title":"Python for Data","category":"Data & AI","level":"Beginner","duration":"8 weeks"},
+  {"id":3,"title":"React Fundamentals","category":"Web","level":"Intermediate","duration":"5 weeks"},
+  {"id":4,"title":"Mobile Apps with Flutter","category":"Mobile","level":"Intermediate","duration":"7 weeks"},
+  {"id":5,"title":"Machine Learning Basics","category":"Data & AI","level":"Advanced","duration":"10 weeks"},
+  {"id":6,"title":"UI/UX Design 101","category":"Design","level":"Beginner","duration":"4 weeks"}
+]
