@@ -22,4 +22,4 @@ A modern, highly responsive React web application that allows users to seamlessl
 
 1. Clone the repository to your machine:
    ```bash
-   git clone [https://github.com/UmairAhmd-dev/course-catalog-app.git](https://github.com/YOUR_USERNAME/course-catalog-app.git)
+   git clone [https://github.com/UmairAhmd-dev/course-catalog-app.git](https://github.com/UmairAhmad-dev/course-catalog-app.git)
