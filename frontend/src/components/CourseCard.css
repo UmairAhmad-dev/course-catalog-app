@@ -8,13 +8,13 @@
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 0; /* CRITICAL FIX: Changed from 1.5rem so the subject image hits the border edges perfectly */
+  padding: 0; 
   display: flex;
   flex-direction: column;
   height: 100%;
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden; /* CRITICAL FIX: Ensures image corners match the card's border-radius */
+  overflow: hidden; 
 }
 
 .course-card:hover {
@@ -22,7 +22,7 @@
   box-shadow: var(--shadow-md);
 }
 
-/* 📸 NEW FEATURE: Image Wrapper & Zoom Effect Configuration */
+/* 📸 Image Wrapper & Zoom Effect Configuration */
 .card-image-wrapper {
   width: 100%;
   height: 160px;
@@ -38,10 +38,10 @@
 }
 
 .course-card:hover .card-image {
-  transform: scale(1.05); /* Smooth micro-interaction scaling on hover */
+  transform: scale(1.05); 
 }
 
-/* 🧱 NEW CONTAINER: Restores defensive spacing for inner descriptive elements */
+/* 🧱 Card Inner Body Container */
 .card-content {
   padding: 1.25rem 1.5rem 1.5rem 1.5rem;
   display: flex;
@@ -64,13 +64,13 @@
   font-size: 1.2rem;
   color: var(--text-primary);
   margin-bottom: 1rem;
-  flex-grow: 1; /* Pushes meta info and footer downwards evenly regardless of title length */
+  flex-grow: 1; 
 }
 
 .card-meta {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem; /* Increased margin to balance the new button layout */
   color: var(--text-secondary);
   font-size: 0.85rem;
 }
@@ -81,14 +81,36 @@
   gap: 0.25rem;
 }
 
+/* Modern Card Footer Container */
 .card-footer {
-  border-top: 1px solid var(--border-color);
-  padding-top: 0.75rem;
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
 }
 
+/* 🏆 Proper Solid Button Upgrade: View Details */
 .footer-text {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--brand-primary);
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Micro-interactions for the Button */
+.course-card:hover .footer-text {
+  background-color: var(--brand-primary-hover);
+  box-shadow: 0 4px 12px rgba(var(--brand-primary-rgb, 0, 0, 0), 0.15);
+}
+
+.footer-text:active {
+  transform: scale(0.98);
 }

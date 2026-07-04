@@ -1,15 +1,41 @@
+
 .back-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
   margin-bottom: 1.5rem;
-  transition: var(--transition-smooth);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Premium Hover Interaction states */
 .back-link:hover {
+  background-color: var(--bg-body);
+  border-color: var(--text-secondary);
   color: var(--brand-primary);
+  transform: translateX(-4px); /* Tactical shift left to visually reinforce moving back */
+  box-shadow: var(--shadow-md);
+}
+
+/* Micro-interaction when clicked physically */
+.back-link:active {
+  transform: scale(0.97) translateX(-4px);
+}
+
+/* Accessibility Focus Ring outline */
+.back-link:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
 }
 
 .detail-card {
