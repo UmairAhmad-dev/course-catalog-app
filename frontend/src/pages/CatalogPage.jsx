@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // 1. Switched out local JSON import for live HTTP network client
 import FilterBar from '../components/FilterBar';
 import CourseCard from '../components/CourseCard';
-import coursesData from '../data/courses.json';
 import './CatalogPage.css';
 
 export default function CatalogPage() {
@@ -11,28 +11,34 @@ export default function CatalogPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortBy, setSortBy] = useState('none');
 
-  // Simulate a short loading delay for professional UI practice
+  // 2. Fetch Live Data from your MERN Backend API instead of a mock timer
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setCourses(coursesData);
-      setLoading(false);
-    }, 800); // Less than 1 second loading feel
-    return () => clearTimeout(timer);
+    const fetchCoursesFromDB = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/courses');
+        setCourses(response.data); // Stores the live MongoDB document array in state
+        setLoading(false);
+      } catch (error) {
+        console.error("API Connection Error on Frontend:", error);
+        setLoading(false);
+      }
+    };
+    fetchCoursesFromDB();
   }, []);
 
-  // Helper function to extract numerical number values from duration strings (e.g., "6 weeks" -> 6)
+  // Helper function to extract numerical values from duration strings (e.g., "6 weeks" -> 6)
   const getDurationNumber = (durationStr) => {
     return parseInt(durationStr) || 0;
   };
 
-  // 1. Process Filter Logic
+  // 3. Process Live Filter Logic
   const filteredCourses = courses.filter((course) => {
     const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || course.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
-  // 2. Process Sorting Logic
+  // 4. Process Live Sorting Logic
   const sortedCourses = [...filteredCourses].sort((a, b) => {
     if (sortBy === 'shortest') {
       return getDurationNumber(a.duration) - getDurationNumber(b.duration);
@@ -40,7 +46,7 @@ export default function CatalogPage() {
     if (sortBy === 'longest') {
       return getDurationNumber(b.duration) - getDurationNumber(a.duration);
     }
-    return 0; // Return clean default position order
+    return 0;
   });
 
   return (
@@ -60,7 +66,7 @@ export default function CatalogPage() {
       {loading && (
         <div className="status-message">
           <div className="spinner"></div>
-          <p>Loading course directory...</p>
+          <p>Loading dynamic database directory...</p>
         </div>
       )}
 
@@ -82,7 +88,8 @@ export default function CatalogPage() {
       {!loading && sortedCourses.length > 0 && (
         <div className="courses-grid">
           {sortedCourses.map((course) => (
-            <CourseCard key={course.id} course={course} />
+            // CRITICAL: Changed course.id to course._id to match MongoDB parameters
+            <CourseCard key={course._id} course={course} />
           ))}
         </div>
       )}
